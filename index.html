@@ -9,12 +9,6 @@ Index · HTML
     <title>Food Munch</title>
  
     <!-- Bootstrap 4 -->
-     <link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link
-  href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
-  rel="stylesheet"
-/>
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
@@ -81,8 +75,8 @@ Index · HTML
         <div class="text-center">
           <h1 class="banner-heading mb-3">Get Delicious Food Anytime</h1>
           <p class="banner-caption mb-4">Eat Smart &amp; Healthy</p>
-          <button type="button" class="custom-button">View Menu</button>
-          <button type="button" class="custom-outline-button">Order Now</button>
+          <button type="button" class="custom-button" data-scroll="#exploreMenuSection">View Menu</button>
+          <button type="button" class="custom-outline-button" data-scroll="#exploreMenuSection">Order Now</button>
         </div>
       </section>
  
@@ -200,7 +194,7 @@ Index · HTML
                 fresh fruits and veggies. Pamper your body and your senses with the
                 true and unadulterated gifts from mother nature.
               </p>
-              <button type="button" class="custom-button">Watch Video</button>
+              <button type="button" class="custom-button" data-toggle="modal" data-target="#videoModal">Watch Video</button>
             </div>
           </div>
         </div>
@@ -228,7 +222,7 @@ Index · HTML
                 map. It's quite a sight to see your food arrive to your door. Plus,
                 you get a 5% discount on every order every time you pay online.
               </p>
-              <button type="button" class="custom-button">Order Now</button>
+              <button type="button" class="custom-button" data-scroll="#exploreMenuSection">Order Now</button>
               <div class="mt-3">
                 <img
                   src="https://d2clawv67efefq.cloudfront.net/ccbp-responsive-website/visa-card-img.png"
@@ -406,6 +400,21 @@ Index · HTML
             <button type="button" class="btn btn-outline-secondary" id="clearCartBtn">Clear cart</button>
             <button type="button" class="custom-button m-0" id="checkoutBtn">Place Order</button>
           </div>
+        </div>
+      </div>
+    </div>
+ 
+    <!-- VIDEO MODAL -->
+    <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg mt-5">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title cart-modal-title" id="videoModalLabel">Watch Video</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body" id="videoWrapper"></div>
         </div>
       </div>
     </div>
