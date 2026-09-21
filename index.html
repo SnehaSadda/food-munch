@@ -1,28 +1,37 @@
+
+
+Index · HTML
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Food Munch</title>
-
+ 
     <!-- Bootstrap 4 -->
+     <link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+  rel="stylesheet"
+/>
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
       integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
       crossorigin="anonymous"
     />
-
+ 
     <!-- Font Awesome 5 (plain CDN stylesheet - this fixes the missing icons) -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
     />
-
+ 
     <!-- Your CSS -->
     <link rel="stylesheet" href="style.css" />
   </head>
-
+ 
   <body>
     <!-- NAVBAR -->
     <header>
@@ -55,12 +64,17 @@
               <a class="nav-link" id="navItem2" href="#exploreMenuSection">Explore Menu</a>
               <a class="nav-link" id="navItem3" href="#deliveryPaymentSection">Delivery &amp; Payment</a>
               <a class="nav-link" id="navItem4" href="#followUsSection">Follow Us</a>
+              <button type="button" class="nav-link cart-nav-btn" id="cartNavBtn"
+                      data-toggle="modal" data-target="#cartModal" aria-label="Open cart">
+                <i class="fas fa-shopping-cart"></i> Cart
+                <span class="cart-count d-none" id="cartCount">0</span>
+              </button>
             </div>
           </div>
         </div>
       </nav>
     </header>
-
+ 
     <main>
       <!-- BANNER -->
       <section class="banner-section-bg-container d-flex justify-content-center flex-column">
@@ -71,7 +85,7 @@
           <button type="button" class="custom-outline-button">Order Now</button>
         </div>
       </section>
-
+ 
       <!-- WHY CHOOSE US -->
       <section class="wcu-section pt-5 pb-5" id="wcuSection">
         <div class="container">
@@ -82,7 +96,7 @@
                 We use both original recipes and classic versions of famous food items.
               </p>
             </div>
-
+ 
             <div class="col-12 col-md-4">
               <div class="wcu-card p-3 mb-3">
                 <img
@@ -99,7 +113,7 @@
                 </p>
               </div>
             </div>
-
+ 
             <div class="col-12 col-md-4">
               <div class="wcu-card p-3 mb-3">
                 <img
@@ -116,7 +130,7 @@
                 </p>
               </div>
             </div>
-
+ 
             <div class="col-12 col-md-4">
               <div class="wcu-card p-3 mb-3">
                 <img
@@ -136,162 +150,35 @@
           </div>
         </div>
       </section>
-
-      <!-- EXPLORE MENU -->
+ 
+      <!-- EXPLORE MENU (cards are created by script.js) -->
       <section class="explore-menu-section pt-5 pb-5" id="exploreMenuSection">
         <div class="container">
           <div class="row">
             <div class="col-12">
               <h2 class="section-heading">Explore Menu</h2>
             </div>
-
-            <div class="col-12 col-md-6 col-lg-3">
-              <div class="shadow menu-item-card p-3 mb-3">
-                <img
-                  src="https://d2clawv67efefq.cloudfront.net/ccbp-responsive-website/em-ginger-fried-img.png"
-                  class="menu-item-image"
-                  alt="Non-veg starters"
-                  loading="lazy"
-                />
-                <h3 class="menu-card-title">Non-Veg Starters</h3>
-                <a href="#exploreMenuSection" class="menu-item-link">
-                  View All
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="#d0b200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                    <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
-                  </svg>
-                </a>
-              </div>
+            <div class="col-12 col-md-6 mb-3">
+              <label for="menuSearch" class="sr-only">Search dishes</label>
+              <input
+                type="search"
+                id="menuSearch"
+                class="form-control menu-search"
+                placeholder="Search dishes..."
+                autocomplete="off"
+              />
             </div>
-
-            <div class="col-12 col-md-6 col-lg-3">
-              <div class="shadow menu-item-card p-3 mb-3">
-                <img
-                  src="https://d2clawv67efefq.cloudfront.net/ccbp-responsive-website/em-veg-starters-img.png"
-                  class="menu-item-image"
-                  alt="Veg starters"
-                  loading="lazy"
-                />
-                <h3 class="menu-card-title">Veg Starters</h3>
-                <a href="#exploreMenuSection" class="menu-item-link">
-                  View All
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="#d0b200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                    <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
-                  </svg>
-                </a>
-              </div>
-            </div>
-
-            <div class="col-12 col-md-6 col-lg-3">
-              <div class="shadow menu-item-card p-3 mb-3">
-                <img
-                  src="https://d2clawv67efefq.cloudfront.net/ccbp-responsive-website/em-soup-img.png"
-                  class="menu-item-image"
-                  alt="Soups"
-                  loading="lazy"
-                />
-                <h3 class="menu-card-title">Soups</h3>
-                <a href="#exploreMenuSection" class="menu-item-link">
-                  View All
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="#d0b200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                    <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
-                  </svg>
-                </a>
-              </div>
-            </div>
-
-            <div class="col-12 col-md-6 col-lg-3">
-              <div class="shadow menu-item-card p-3 mb-3">
-                <img
-                  src="https://d2clawv67efefq.cloudfront.net/ccbp-responsive-website/em-grilled-seafood-img.png"
-                  class="menu-item-image"
-                  alt="Fish and seafood"
-                  loading="lazy"
-                />
-                <h3 class="menu-card-title">Fish &amp; Sea food</h3>
-                <a href="#exploreMenuSection" class="menu-item-link">
-                  View All
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="#d0b200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                    <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
-                  </svg>
-                </a>
-              </div>
-            </div>
-
-            <div class="col-12 col-md-6 col-lg-3">
-              <div class="shadow menu-item-card p-3 mb-3">
-                <img
-                  src="https://d2clawv67efefq.cloudfront.net/ccbp-responsive-website/em-hyderabadi-biryani-img.png"
-                  class="menu-item-image"
-                  alt="Main course"
-                  loading="lazy"
-                />
-                <h3 class="menu-card-title">Main Course</h3>
-                <a href="#exploreMenuSection" class="menu-item-link">
-                  View All
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="#d0b200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                    <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
-                  </svg>
-                </a>
-              </div>
-            </div>
-
-            <div class="col-12 col-md-6 col-lg-3">
-              <div class="shadow menu-item-card p-3 mb-3">
-                <img
-                  src="https://d2clawv67efefq.cloudfront.net/ccbp-responsive-website/em-mushroom-noodles-img.png"
-                  class="menu-item-image"
-                  alt="Noodles"
-                  loading="lazy"
-                />
-                <h3 class="menu-card-title">Noodles</h3>
-                <a href="#exploreMenuSection" class="menu-item-link">
-                  View All
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="#d0b200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                    <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
-                  </svg>
-                </a>
-              </div>
-            </div>
-
-            <div class="col-12 col-md-6 col-lg-3">
-              <div class="shadow menu-item-card p-3 mb-3">
-                <img
-                  src="https://d2clawv67efefq.cloudfront.net/ccbp-responsive-website/em-gluten-img.png"
-                  class="menu-item-image"
-                  alt="Salads"
-                  loading="lazy"
-                />
-                <h3 class="menu-card-title">Salads</h3>
-                <a href="#exploreMenuSection" class="menu-item-link">
-                  View All
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="#d0b200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                    <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
-                  </svg>
-                </a>
-              </div>
-            </div>
-
-            <div class="col-12 col-md-6 col-lg-3">
-              <div class="shadow menu-item-card p-3 mb-3">
-                <img
-                  src="https://d2clawv67efefq.cloudfront.net/ccbp-responsive-website/em-coffee-bourbon-img.png"
-                  class="menu-item-image"
-                  alt="Desserts"
-                  loading="lazy"
-                />
-                <h3 class="menu-card-title">Desserts</h3>
-                <a href="#exploreMenuSection" class="menu-item-link">
-                  View All
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="#d0b200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                    <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
-                  </svg>
-                </a>
-              </div>
+            <div class="col-12">
+              <div id="filterBar" class="menu-filters mb-4"></div>
             </div>
           </div>
+          <div class="row" id="menuGrid"></div>
+          <p id="noResults" class="text-center menu-no-results d-none">
+            No dishes found. Try another search or category.
+          </p>
         </div>
       </section>
-
+ 
       <!-- HEALTHY FOOD -->
       <section class="healthy-food-section pt-5 pb-5">
         <div class="container">
@@ -318,7 +205,7 @@
           </div>
         </div>
       </section>
-
+ 
       <!-- DELIVERY & PAYMENT -->
       <section class="delivery-and-payment-section pt-5 pb-5" id="deliveryPaymentSection">
         <div class="container">
@@ -372,7 +259,7 @@
           </div>
         </div>
       </section>
-
+ 
       <!-- THANKING CUSTOMERS -->
       <section class="thanking-customers-section pt-5 pb-5">
         <div class="container">
@@ -380,7 +267,7 @@
             <div class="col-12 col-md-7 d-flex flex-column justify-content-center">
               <h2 class="section-heading">Thank you for being a valuable customer to us.</h2>
               <p class="section-description">We have a surprise gift for you</p>
-
+ 
               <div class="d-md-none text-center">
                 <img
                   src="https://d2clawv67efefq.cloudfront.net/ccbp-responsive-website/thanking-customers-section-img.png"
@@ -389,12 +276,12 @@
                   loading="lazy"
                 />
               </div>
-
+ 
               <div>
                 <button type="button" class="custom-button" data-toggle="modal" data-target="#exampleModal">
                   Redeem Gift
                 </button>
-
+ 
                 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                   <div class="modal-dialog mt-5">
                     <div class="modal-content">
@@ -421,7 +308,7 @@
                 </div>
               </div>
             </div>
-
+ 
             <div class="col-12 col-md-5 d-none d-md-block text-center">
               <img
                 src="https://d2clawv67efefq.cloudfront.net/ccbp-responsive-website/thanking-customers-section-img.png"
@@ -433,7 +320,7 @@
           </div>
         </div>
       </section>
-
+ 
       <!-- FOLLOW US -->
       <section class="follow-us-section pt-5 pb-5" id="followUsSection">
         <div class="container">
@@ -458,7 +345,7 @@
         </div>
       </section>
     </main>
-
+ 
     <!-- FOOTER -->
     <footer class="footer-section pt-5 pb-5">
       <div class="container">
@@ -476,7 +363,53 @@
         </div>
       </div>
     </footer>
-
+ 
+    <!-- CART MODAL -->
+    <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-scrollable mt-5">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title cart-modal-title" id="cartModalLabel">Your Cart</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div id="orderMessage" class="alert alert-success d-none" role="status"></div>
+            <p id="cartEmpty" class="text-center cart-empty">
+              Your cart is empty. Add some dishes from the menu.
+            </p>
+            <div id="cartItems"></div>
+ 
+            <div id="cartSummary" class="d-none">
+              <div class="input-group mt-3">
+                <input type="text" id="discountInput" class="form-control"
+                       placeholder="Discount code (try MUNCH10)" aria-label="Discount code" />
+                <div class="input-group-append">
+                  <button type="button" class="btn btn-outline-secondary" id="applyDiscountBtn">Apply</button>
+                </div>
+              </div>
+              <p id="discountMessage" class="discount-message" role="status"></p>
+ 
+              <div class="cart-summary-row">
+                <span>Subtotal</span><span id="cartSubtotal">&#8377;0</span>
+              </div>
+              <div class="cart-summary-row d-none" id="discountRow">
+                <span>Discount</span><span id="cartDiscount">-&#8377;0</span>
+              </div>
+              <div class="cart-summary-row cart-total-row">
+                <span>Total</span><span id="cartTotal">&#8377;0</span>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline-secondary" id="clearCartBtn">Clear cart</button>
+            <button type="button" class="custom-button m-0" id="checkoutBtn">Place Order</button>
+          </div>
+        </div>
+      </div>
+    </div>
+ 
     <!-- Scripts at the end so the page loads faster -->
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
@@ -493,5 +426,9 @@
       integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
       crossorigin="anonymous"
     ></script>
+    <script src="menu-data.js"></script>
+    <script src="script.js"></script>
+    <script src="cart.js"></script>
   </body>
 </html>
+ 
